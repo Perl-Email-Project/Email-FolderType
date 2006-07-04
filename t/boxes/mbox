@@ -1,0 +1,37 @@
+From casey@geeknest.com Tue May  4 11:57:42 2004
+Return-Path: <casey@geeknest.com>
+X-Original-To: casey@geeknest.com
+Delivered-To: cwest@caseywest.com
+Received: from localhost (localhost.caseywest.com [127.0.0.1])
+	by caseywest.com (Postfix) with ESMTP
+	id E970FFDAB; Tue,  4 May 2004 11:57:40 -0400 (EDT)
+Received: from caseywest.com ([127.0.0.1])
+ by localhost (doppio.caseywest.com [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 47928-05; Tue,  4 May 2004 11:57:40 -0400 (EDT)
+Received: by caseywest.com (Postfix, from userid 1001)
+	id ADE8EFDA8; Tue,  4 May 2004 11:57:40 -0400 (EDT)
+Date: Tue, 4 May 2004 11:57:40 -0400
+From: Casey West <casey@geeknest.com>
+To: cwest@geeknest.com
+Subject: Test for Email::FolderType
+Message-ID: <20040504155740.GF12004@geeknest.com>
+Reply-To: casey@geeknest.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+User-Agent: Mutt/1.4i
+X-Virus-Scanned: by amavisd-new at geeknest.com
+X-Mail-Filter: by Mail::Audit v2.1 on caseywest.com
+Content-Length: 162
+Lines: 9
+
+Welcome to your test message.
+
+  Casey West
+
+-- 
+Technology makes it possible for people to gain control over
+everything, except over technology. 
+-- John Tudor
+
+

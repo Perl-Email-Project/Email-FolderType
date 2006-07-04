@@ -1,0 +1,16 @@
+Changes
+lib/Email/FolderType.pm
+lib/Email/FolderType/Local.pm
+lib/Email/FolderType/Register.pm
+Makefile.PL
+MANIFEST			This list of files
+META.yml
+README
+t/00_use.t
+t/05_register.t
+t/10_kill_eft.t
+t/15_kill_eftr.t
+t/20_local.t
+t/boxes/ezmlm/archive/test
+t/boxes/maildir/cur/test
+t/boxes/mbox
