@@ -9,7 +9,7 @@ require Exporter;
 @ISA       = qw(Exporter);
 @EXPORT_OK = qw(folder_type);
 
-$VERSION = '0.8';
+$VERSION = '0.810';
 our $DEFAULT = 'Mbox';
 
 =head1 NAME
@@ -166,15 +166,15 @@ If there is demand for a compatability shim for the old C<register_type>
 method then we can implement one. Really though, this is much better in 
 the long run.
 
+=head1 PERL EMAIL PROJECT
+
+This module is maintained by the Perl Email Project.
+
+  http://emailproject.perl.org/wiki/Email::FolderType
+
 =head1 AUTHOR
 
 Simon Wistow <simon@thegestalt.org>
-
-=head1 SUPPORT
-
-This module is part of the Perl Email Project - http://pep.kwiki.org/
-
-There is a mailing list at pep@perl.org (subscribe at pep-subscribe@perl.org) and an archive available at http://nntp.perl.org/group/pep.php
 
 =head1 COPYING
 

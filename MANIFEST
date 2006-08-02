@@ -1,4 +1,3 @@
-Build.PL
 Changes
 lib/Email/FolderType.pm
 lib/Email/FolderType/Ezmlm.pm
@@ -16,6 +15,7 @@ t/03mh.t
 t/10killeft.t
 t/15newmatcher.t
 t/16newdefault.t
+t/ezmlm.t
 t/testmbox
 t/testmaildir/tmp/.exists
 t/testmaildir/cur/.exists
