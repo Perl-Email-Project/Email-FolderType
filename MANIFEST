@@ -4,9 +4,9 @@ lib/Email/FolderType/Ezmlm.pm
 lib/Email/FolderType/Maildir.pm
 lib/Email/FolderType/Mbox.pm
 lib/Email/FolderType/MH.pm
+Makefile.PL
 MANIFEST
 MANIFEST.SKIP
-Makefile.PL
 META.yml
 t/00use.t
 t/01mbox.t
@@ -16,7 +16,9 @@ t/10killeft.t
 t/15newmatcher.t
 t/16newdefault.t
 t/ezmlm.t
-t/testmbox
-t/testmaildir/tmp/.exists
+t/pod-coverage.t
+t/pod.t
 t/testmaildir/cur/.exists
 t/testmaildir/new/.exists
+t/testmaildir/tmp/.exists
+t/testmbox

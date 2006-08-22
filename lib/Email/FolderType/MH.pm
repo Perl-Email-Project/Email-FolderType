@@ -1,4 +1,5 @@
 package Email::FolderType::MH;
+use strict;
 
 =head1 NAME
 

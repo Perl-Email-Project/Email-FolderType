@@ -1,5 +1,5 @@
 package Email::FolderType::Mbox;
-
+use strict;
 
 =head1 NAME
 
