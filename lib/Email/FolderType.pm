@@ -9,7 +9,7 @@ require Exporter;
 @ISA       = qw(Exporter);
 @EXPORT_OK = qw(folder_type);
 
-$VERSION = '0.810';
+$VERSION = '0.811';
 our $DEFAULT = 'Mbox';
 
 =head1 NAME

@@ -1,3 +1,7 @@
+0.811    2006-08-22
+  - use strict
+  - pod tests
+
 0.810    2006-08-02
   - don't match //$ as Maildir, to avoid clobbering Ezmlm
 
