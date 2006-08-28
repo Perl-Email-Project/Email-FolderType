@@ -1,0 +1,123 @@
+NAME
+    Email::FolderType - determine the type of a mail folder
+
+SYNOPSIS
+      use Email::FolderType qw(folder_type);
+
+      print folder_type "~/mymbox";     # prints 'Mbox'
+      print folder_type "~/a_maildir/"; # prints 'Maildir'
+      print folder_type "some_mh/.";    # prints 'MH'
+      print folder_type "an_archive//"; # prints 'Ezmlm'
+
+DESCRIPTION
+    Provides a utility subroutine for detecting the type of a given mail
+    folder.
+
+SUBROUTINES
+  folder_type <path>
+    Automatically detects what type of mail folder the path refers to and
+    returns the name of that type.
+
+    It primarily bases the type on the suffix of the path given.
+
+      Suffix | Type
+     --------+---------
+      /      | Maildir
+      /.     | MH
+      //     | Ezmlm
+
+    In case of no known suffix it checks for a known file structure. If that
+    doesn't work out it defaults to "Mbox" although, if the "Mbox" matcher
+    has been overridden or the default changed (see DEFAULT MATCHER below)
+    then it will return undef.
+
+  matchers
+    Returns a list of all the matchers available to the system.
+
+DEFAULT MATCHER
+    Currently the default matcher is "Mbox" and therefore it is always
+    checked last and always returns 1.
+
+    If you really want to change this then you should override
+    "Email::FolderType::Mbox::match" and/or change the variable
+    $Email::FolderType::DEFAULT to be something other than 'Mbox'.
+
+            use Email::FolderType;
+            use Email::FolderType::Mbox;
+
+            $Email::FolderType::DEFAULT = 'NewDefault';
+
+        package Email::FolderType::Mbox;
+        sub match { return (defined $_[0] && -f $_[0]) }
+
+            package Email::FolderType::NewDefault;
+            sub match { return (defined $_[0] && $_[0] =~ m!some crazy pattern!) }
+            1;
+
+REGISTERING NEW TYPES
+    "Email::FolderType" briefly flirted with a rather clunky "register_type"
+    method for registering new matchers but, in retrospect that wasn't a
+    great idea.
+
+    Instead, in this version we've reverted to a "Module::Pluggable" based
+    system - any classes in the "Email::FolderType::" namespace will be
+    interrogated to see if they have a c<match> method.
+
+    If they do then it will be passed the folder name. If the folder matches
+    then the match function should return 1. For example ...
+
+        package Email::FolderType::GzippedMbox;
+
+        sub match {
+            my $folder = shift;
+            return (-f $folder && $folder =~ /.gz$/);
+        }
+
+        1;
+
+    These can even be defined inline ...
+
+        #!perl -w
+
+        use strict;
+        use Email::Folder;
+        use Email::LocalDelivery;
+
+        # copy all mail from an IMAP folder
+        my $folder = Email::Folder->new('imap://example.com'); # read INBOX
+        for ($folder->messages) {
+            Email::LocalDelivery->deliver($_->as_string, 'local_mbox');
+        }
+
+        package Email::FolderType::IMAP;
+
+        sub match {
+            my $folder = shift;
+            return $folder =~ m!^imap://!;
+        }
+
+        1;
+
+    If there is demand for a compatability shim for the old "register_type"
+    method then we can implement one. Really though, this is much better in
+    the long run.
+
+PERL EMAIL PROJECT
+    This module is maintained by the Perl Email Project.
+
+      http://emailproject.perl.org/wiki/Email::FolderType
+
+AUTHOR
+    Simon Wistow <simon@thegestalt.org>
+
+COPYING
+    (C) Copyright 2005, Simon Wistow
+
+    Distributed under the same terms as Perl itself.
+
+    This software is under no warranty and will probably ruin your life,
+    kill your friends, burn your house and bring about the apocalypse.
+
+SEE ALSO
+    Email::LocalDelivery, Email::Folder
+

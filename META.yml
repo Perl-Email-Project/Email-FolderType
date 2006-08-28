@@ -1,0 +1,23 @@
+--- #YAML:1.0
+name: Email-FolderType
+version: 0.8
+author:
+  - Simon Wistow <simon@thegestalt.org>
+abstract: determine the type of a mail folder
+license: perl
+requires:
+  Module::Pluggable: 0
+  Test::More: 0
+provides:
+  Email::FolderType:
+    file: lib/Email/FolderType.pm
+    version: 0.8
+  Email::FolderType::Ezmlm:
+    file: lib/Email/FolderType/Ezmlm.pm
+  Email::FolderType::MH:
+    file: lib/Email/FolderType/MH.pm
+  Email::FolderType::Maildir:
+    file: lib/Email/FolderType/Maildir.pm
+  Email::FolderType::Mbox:
+    file: lib/Email/FolderType/Mbox.pm
+generated_by: Module::Build version 0.25
