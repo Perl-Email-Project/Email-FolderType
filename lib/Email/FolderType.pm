@@ -9,7 +9,7 @@ require Exporter;
 @ISA       = qw(Exporter);
 @EXPORT_OK = qw(folder_type);
 
-$VERSION = '0.812';
+$VERSION = '0.813';
 our $DEFAULT = 'Mbox';
 
 =head1 NAME
@@ -77,7 +77,7 @@ sub folder_type ($) {
     # default
     return $DEFAULT if &{"$package\::$DEFAULT\::match"}($folder);
 
-	return undef;
+    return undef;
 }
 
 =head2 matchers
