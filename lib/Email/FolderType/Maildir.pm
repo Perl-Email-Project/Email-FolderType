@@ -1,11 +1,7 @@
-package Email::FolderType::Maildir;
 use strict;
-
-=head1 NAME
-
-Email::FolderType::Maildir - class to help Email::FolderType recognise maildirs
-
-=cut
+use warnings;
+package Email::FolderType::Maildir;
+# ABSTRACT: class to help Email::FolderType recognise maildirs
 
 sub match {
   my $folder = shift;

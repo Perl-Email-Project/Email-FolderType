@@ -1,11 +1,7 @@
-package Email::FolderType::Mbox;
 use strict;
-
-=head1 NAME
-
-Email::FolderType::Mbox - class to help Email::FolderType recognise MH mail directories
-
-=cut
+use warnings;
+package Email::FolderType::Mbox;
+# ABSTRACT: class to help Email::FolderType recognise MH mail directories
 
 # since Mbox is the default always return 1
 

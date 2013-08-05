@@ -1,5 +1,8 @@
 Revision history for Email-FolderType
 
+{{$NEXT}}
+          new repo, new bugtracker, same old code
+
 0.813     2007-03-22
           packaging improvements
 
@@ -17,7 +20,7 @@ Revision history for Email-FolderType
           another rewrite because the old module registration system was clunky
             the new one uses the ever shiny (not that I'm biased)
             Module::Pluggable
- 
+
 0.7       Tuesday 4th May, 2004
           rewrote distribution to include type registration so folder types can
           be added at will by other module authors
